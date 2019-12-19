@@ -15,8 +15,10 @@ while True:
 	
 	c, addr = s.accept()
 	print('Connection received from', addr)
-	
-	c.send('Message received, thank you.')
+
+	tosend = "Message received, thank you."
+
+	c.send(tosend.encode())
 
 	c.close()
 
