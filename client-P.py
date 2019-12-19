@@ -19,3 +19,11 @@ try:
     s.connect((host_ip, port))
 except socket.error as exc:
     print("Error connecting to host:", host_ip, exc)
+
+Data = s.recvfrom(65536)
+datagramfromclient = Data[0]
+datagramsourceaddress = Data[1]
+if Data:
+    print(datagramfromclient)
+    print(datagramsourceaddress)
+data = None
